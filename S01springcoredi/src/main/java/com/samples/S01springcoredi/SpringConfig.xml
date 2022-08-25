@@ -8,8 +8,19 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--  	<bean name="emp" class="com.samples.S01springcoredi.Employee"
-		p:id="22" p:name="williams" />
+	<bean name="emp" class="com.samples.S01springcoredi.Employee"
+		p:id="22" p:name="williams">
+
+		<property name="address">
+			<bean class="com.samples.S01springcoredi.Address"
+				p:houseNumber="123" p:street="main street" p:city="NY" />
+
+		</property>
+
+
+	</bean>
+
+
 
 	<bean name="hospital" class="com.samples.S01springcoredi.Hospital">
 		<property name="name" value="Global Hospitals" />
@@ -17,7 +28,6 @@
 			<value>Casualty</value>
 		</property>
 	</bean>
-
 	<bean name="cardealer"
 		class="com.samples.S01springcoredi.CarDealer">
 		<property name="name" value="ABC Motors" />
@@ -30,10 +40,8 @@
 			</set>
 		</property>
 	</bean>
-	
-	
-	<bean name="customer"
-		class="com.samples.S01springcoredi.Customer" p:id="37">
+	<bean name="customer" class="com.samples.S01springcoredi.Customer"
+		p:id="37">
 		<property name="products">
 			<map>
 				<entry key="100" value="IPhone" />
@@ -44,20 +52,30 @@
 			</map>
 		</property>
 	</bean>
-	
+
 	<bean name="countries"
-		class="com.samples.S01springcoredi.CountriesAndLanguages" p:id="37">
-		<property name="CountriesAndLanguages">
+		class="com.samples.S01springcoredi.CountriesAndLanguages">
+		<property name="countryLanguages">
 			<props>
-				<prop key="India">Hindi</prop>
-				<prop key="USA">AEnglish</prop> 
-				<prop key="Canada">CEnglish</prop>
-				<prop key="France">French</prop>
-				<prop key="Germani">German</prop>
+				<prop key="USA">English</prop>
+				<prop key="Canada">French</prop>
+				<prop key="Germany">German</prop>
+				<prop key="Japan">Japanese</prop>
 			</props>
 		</property>
-	</bean> -->
-	
-	<bean name="item" class="com.samples.S01springcoredi.Item" p:id="1" p:name="Milk" p:price="60" p:quantity="5" />
-	<bean name="shoppingcart" class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="item"/>
+	</bean>
+
+	<bean name="item" class="com.samples.S01springcoredi.Item"
+		p:id="1" p:name="Milk" p:price="60" p:quantity="5" />
+	<bean name="shoppingcart"
+		class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="item" />
+
+	<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" init-method="methodOne" destroy-method="methodTwo" />
+
+	<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" />
+
+	<context:annotation-config />
+
 </beans>	

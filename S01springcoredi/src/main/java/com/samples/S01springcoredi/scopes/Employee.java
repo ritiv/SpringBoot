@@ -1,4 +1,4 @@
-package com.samples.S01springcoredi;
+package com.samples.S01springcoredi.scopes;
 
 import org.springframework.beans.factory.annotation.Required;
 
@@ -8,12 +8,6 @@ public class Employee {
 	private String name;
 	private Address address;
 	
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 	public int getId() {
 		return id;
 	}
@@ -28,11 +22,16 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
-	
-	
-	
+
 }
