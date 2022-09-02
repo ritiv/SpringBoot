@@ -17,7 +17,7 @@ public class App {
 
 		Instructor inst = (Instructor) springContainer.getBean("inst");
 		System.out.println(inst);
-		
+
 
 	}
 }
